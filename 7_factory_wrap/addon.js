@@ -9,3 +9,11 @@ var obj2 = createObject(20);
 console.log( obj2.plusOne() ); // 21
 console.log( obj2.plusOne() ); // 22
 console.log( obj2.plusOne() ); // 23
+
+// This will throw an error since the object is not of the right type
+try {
+    obj2.plusOne.call({});
+}
+catch (err) {
+    console.log('got expected error on using wrong type: %s', err);
+}
